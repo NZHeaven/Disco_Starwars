@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song</title>
+</head>
+<body style="background-color: red;">
+  <div style="display: flex; flex-wrap: wrap; flex-direction: column;; justify-content: center; align-items: center;">
+      <h1>Disco Starwars Song</h1>
+  <br><br>
+  <img width="900px" height="500px" src="{{url_for('static',filename='disco.gif')}}" alt="this slowpoke moves"  width=250/>
+<audio controls style="margin-top: 50px;">
+    <source src="http://192.168.125.153:5000/wav" type="audio/wav">
+</audio>
+</div>
+
+<script type="text/javascript">
+    window.onload = changeColours;
+    var x;
+    var color;
+    
+    function changeColours(){
+        x = 1;
+        setInterval(change, 100);
+    }
+
+    function change(){
+        switch(x) {
+            case 1:
+                x = 2;
+                color = "red"
+            break;
+            case 2:
+                x = 3;
+                color = "yellow"
+            break;
+            case 3:
+                x = 4;
+                color = "green"
+            break;
+            case 4:
+                x = 1;
+                color = "blue"
+            break;
+            default:
+                color = "red"
+        }
+        document.body.style.background = color;
+    }
+    
+</script>
